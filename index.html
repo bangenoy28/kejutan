@@ -243,13 +243,7 @@ body::before {
     width: var(--card-width);
     max-width: 100%;
 
-    max-height:
-        calc(
-            100dvh
-            - env(safe-area-inset-top)
-            - env(safe-area-inset-bottom)
-            - 24px
-        );
+    max-height: calc(100dvh - 20px);
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -260,27 +254,29 @@ body::before {
 
     text-align: center;
 
-    border: 1px solid rgba(255,255,255,.18);
-    border-radius: clamp(22px, 6vw, 34px);
+    border: 1px solid rgba(255, 255, 255, .24);
+    border-radius: 28px;
 
+    /* CARD LEBIH TRANSPARAN */
     background:
         linear-gradient(
             145deg,
-            rgba(45,31,43,.86),
-            rgba(25,15,24,.76)
+            rgba(55, 30, 52, .48),
+            rgba(15, 8, 15, .36)
         );
 
-    backdrop-filter: blur(22px) saturate(125%);
-    -webkit-backdrop-filter: blur(22px) saturate(125%);
+    backdrop-filter:
+        blur(9px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+        blur(9px)
+        saturate(125%);
 
     box-shadow:
-        0 25px 75px rgba(0,0,0,.60),
-        inset 0 1px rgba(255,255,255,.10),
-        0 0 0 1px rgba(233,160,173,.04);
-
-    scrollbar-width: none;
-
-    animation: cardIn .65s ease both;
+        0 25px 75px rgba(0, 0, 0, .40),
+        inset 0 1px rgba(255, 255, 255, .14),
+        0 0 30px rgba(233, 160, 173, .05);
 }
 
 .shell::-webkit-scrollbar {
